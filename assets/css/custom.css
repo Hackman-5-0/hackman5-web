@@ -1,0 +1,25 @@
+/* Add here all your css styles (customizations) */
+
+.content dd {
+    margin-left: 0px;
+}
+
+hr.style13 {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.service-btn{
+	border-radius: 50px;
+	border: 0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 6px 13px;
+    position: relative;
+    background: #f58220;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+}

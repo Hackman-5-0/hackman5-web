@@ -98,8 +98,27 @@
                             <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 promo-info">
                                 <img class="img-responsive animated slideInUp wow" src="assets/img/bg/hackman.gif" alt="">
                                 <p>November 4th|5th <br><br> <b>#EAT #CODE #COFFEE #REPEAT</b></p>
-                                <a href="Timer.html" class="btn-u btn-banner btn-apple"><i class="fa fa-clock-o fa-2x"></i>Inaugrate<br>
+                                <a id="inaugrate_btn" class="btn-u btn-banner btn-apple"><i class="fa fa-clock-o fa-2x"></i>Inaugrate<br>
                                 <span>Countdown</span></a>
+                                <section id="countdown" class="hidden">
+                                    <!-- <h1 class="page-header text-center">Time remaining</h1> -->
+                                    <div class="container">
+                                        <div class="row" id="counter">
+                                            <div class="col-md-2 col-sm-3 col-xs-4 ">
+                                                <span class="hours"></span>
+                                                <div class="smalltext">Hours</div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                                <span class="minutes"></span>
+                                                <div class="smalltext">Minutes</div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                                <span class="seconds"></span>
+                                                <div class="smalltext">Seconds</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                                 <a href="#internship" class="btn-u btn-banner btn-android"><i class="fa fa-briefcase fa-2x"></i>Internship<br>
                                 <span>partners</span></a>
                             </div>
@@ -112,6 +131,7 @@
                     </div>
                 </div>
             </section>
+            
             <!-- End Promo Block -->
             <!-- Benefits -->
             <section id="benefits">
@@ -585,4 +605,49 @@
             <!--End of Tawk.to Script-->
             <![endif]-->
         </body>
+
+        <script>
+           
+            function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+            }
+            function initializeClock(id, endtime) {
+                var clock = document.getElementById(id);
+                var hoursSpan = clock.querySelector('.hours');
+                var minutesSpan = clock.querySelector('.minutes');
+                var secondsSpan = clock.querySelector('.seconds');
+
+                function updateClock() {
+                    var t = getTimeRemaining(endtime);
+                    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+                    if (t.total === 0) {
+                    clearInterval(timeinterval);
+                    }
+                }
+
+                updateClock();                
+                var timeinterval = setInterval(updateClock, 1000);
+            }
+
+            $('#inaugrate_btn').on('click',function(){
+                $(this).addClass('hidden');
+                $('#countdown').removeClass('hidden');
+                var deadline = new Date(Date.parse(new Date()) + 24* 60 * 60 * 1000);            
+                initializeClock('counter', deadline);
+            });
+        </script>
     </html>

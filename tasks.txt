@@ -1,0 +1,25 @@
+FRONTEND - REGISTRATION
+    STEPPER-1 
+        - Date, time and location of the event - in text
+        - name of participant, who is registration, so 1 textbox for name
+        - email id
+        - phone number
+        - college name
+
+    STEPPER-2
+        - Amount in the form of bold text (x amt per person)
+        - button to initiate the payment 
+        - when payment is processing show a buffer animation, if its successfull show tick mark.
+    - Abhijeet, Alam - On hold
+    - Deadline - 30th April, 1st May
+
+BACKEND - REGISTRATION 
+    - Razorpay API,calling api from FRONTEND
+    - Storing the details in a gsheet
+    - Ayush, - reading documentation
+    - Deadline - 30th April, 1st May
+
+FRONTEND - STATIC WEBSITE
+    - Combining the components into a single html file.
+    - Alam, Abhijeet - In progress
+    - Deadline - Monday/Tuesday - 25th April/26th April

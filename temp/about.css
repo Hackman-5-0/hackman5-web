@@ -23,6 +23,7 @@ background-image: linear-gradient(43deg, #12192c 0%, #12192c 46%, #d71313 100%);
     align-content: center;
     min-height: 100vh;
 }
+
 section [id="about-the-event"]{
     display: grid;
     width: 100vw;
@@ -33,6 +34,15 @@ section [id="about-the-event"]{
     margin: 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 12px
+}
+
+body [id="about-us"]{
+    background-color: #313638;
+    font-family: "Poppins", sans-serif;
+  }
+
+.about-heading {
+    color: #ccc !important;
 }
 .image {
     background-color: #313638;
@@ -118,6 +128,17 @@ section [id="about-the-event"]{
     cursor: pointer;
 }
 
+.font-awesome-green {
+    color: #69bf72 !important;
+}
+
+.font-awesome-yellow {
+    color: #f2cf1d !important;
+}
+
+.font-awesome-grey {
+    color: #313638 !important;
+}
 
 /*****************/
 

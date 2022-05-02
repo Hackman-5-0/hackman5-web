@@ -6,7 +6,7 @@
 }
 
 body [id="meet-the-team"]{
-  background-color: #12172b;
+  background-color: #313638;
   font-family: "Poppins", sans-serif;
 }
 
@@ -27,14 +27,16 @@ body [id="meet-the-team"]{
 
 .profiles {
   display: flex;
- flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 80px 80px;
 
 }
 
 .profile {
-  flex-basis: 260px;
+  flex-basis: 25%;
+
+  
 }
 
 .profile .profile-img {
@@ -44,6 +46,9 @@ body [id="meet-the-team"]{
   filter: grayscale(0%);
   cursor: pointer;
   transition: 200ms;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .profile:hover .profile-img {
@@ -52,7 +57,9 @@ body [id="meet-the-team"]{
 
 .user-name {
   margin-top: 30px;
-  font-size: 25px;
+  font-size: 20px;
+  color: #ccc;
+  text-align: center;
 }
 
 .profile h5 {
@@ -66,6 +73,13 @@ body [id="meet-the-team"]{
   font-size: 16px;
   margin-top: 20px;
   text-align: justify;
+}
+
+
+.meet-the-team-heading {
+  padding-top: 20px;
+  font-size: 25px;
+  color: #ccc;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -103,5 +117,11 @@ body [id="meet-the-team"]{
 
   .profile p {
     margin: 20px 10px 80px 10px;
+  }
+}
+
+@media only screen and (min-width: 1150px) {
+  .profile {
+    margin-bottom: 30px;
   }
 }

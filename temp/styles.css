@@ -166,6 +166,29 @@
     margin-top: -200px !important;
 }
 
+.hackman-navbar {
+    background-color: #313638 !important;
+}
+
+.navItems {
+    color: white !important;
+    font-size: 1.5em;
+}
+.navItems:hover {
+    color: #69bf72 !important;
+    text-decoration: none;
+}
+.nav-item {
+    margin-left: 3.5em;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hackman-jumbotron {
+       margin-top: 100px;
+    }
+    
+}
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {

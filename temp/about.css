@@ -140,6 +140,10 @@ body [id="about-us"]{
     color: #313638 !important;
 }
 
+.about-individual-box {
+    border-radius: 20px;
+}
+
 /*****************/
 
 @media(max-width: 900px){

@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+    
+    .section {
+        width:100%;
+        border-top:1px solid #eee;
+        padding:20px 0;
+        margin:auto;
+    }
+    .section1 {
+        width:70%;
+        border-top:1px solid #eee;
+        padding:20px 0;
+        margin:auto;
+    }
+    .pageitem {
+        display:table;
+        width:100%;
+        margin-bottom:15px;
+        padding-top:15px;
+        text-align:center;
+    }
+    .pageitem h2 {
+        font-size:2.3rem;
+        font-weight: bold;
+        background-color:inherit;
+        color:#444;
+        margin-top:0;
+    }
+    .pageitem p {
+        padding:0 75px;
+        margin:0;
+        font-weight: 550;
+        color:#2f3640;
+        font-size:18px;
+        line-height:200%;
+    }
+    .col {
+    display: table-cell;
+    }

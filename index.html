@@ -47,7 +47,7 @@
         </head>
         <body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery" style="width: 100vw; overflow-x: none;">
             <!-- Header -->
-            <nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top hackman-navbar" style="width: 100vw;">
+            <nav class="navbar navbar-dark navbar-expand-sm bg-dark fixed-top hackman-navbar" style="width: 100vw; border-radius: 0px;">
                 <div class="container">
                     
                     <a class="navbar-brand" href="#" style="display: flex; align-items: center; justify-content: center;"><img src="assets/img/bg/hackman2.png" height="30" style="width: 100%;"></a>
@@ -76,35 +76,34 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 promo-info">
-                                <img class="img-responsive animated slideInUp wow" src="assets/img/bg/hackman.png" alt="">
+                                <img class="img-responsive animated slideInUp wow" src="assets/img/bg/hackman3.png" alt="">
                                 <p>June 4th|5th <br><br> <b>#EAT #CODE #COFFEE #REPEAT</b></p>
-                                <a id="inaugrate_btn" class="btn-u btn-banner countdown-btn"><i class="fa fa-clock-o fa-2x"></i>inaugrate<br>
-                                <span>Countdown</span></a>
-                                <section id="countdown" class="hidden">
+                                <section id="countdown" >
                                     <!-- <h1 class="page-header text-center">Time remaining</h1> -->
                                     <div class="container">
                                         <div class="row" id="counter">
-                                            <div class="col-md-2 col-sm-3 col-xs-4 ">
+                                            <div class="col-md-2 col-sm-3 col-xs-4 " style="border-radius: 15px;">
                                                 <span class="days"></span>
                                                 <div class="smalltext">Days</div>
                                             </div>
-                                            <div class="col-md-2 col-sm-3 col-xs-4 ">
-                                                <span class="hours"></span>
+                                            <div class="col-md-2 col-sm-3 col-xs-4 "style="border-radius: 15px; background-color: #ffffff">
+                                                <span class="hours" style="background-color: #ffffff"></span>
                                                 <div class="smalltext">Hours</div>
+                                                
                                             </div>
-                                            <div class="col-md-2 col-sm-3 col-xs-4">
-                                                <span class="minutes"></span>
+                                            <div class="col-md-2 col-sm-3 col-xs-4"style="border-radius: 15px; background-color: #f1db71">
+                                                <span class="minutes" style="background-color: #f1db71"></span>
                                                 <div class="smalltext">Minutes</div>
                                             </div>
-                                            <div class="col-md-2 col-sm-3 col-xs-4">
+                                            <div class="col-md-2 col-sm-3 col-xs-4"style="border-radius: 15px; ">
                                                 <span class="seconds"></span>
                                                 <div class="smalltext">Seconds</div>
                                             </div>
                                         </div>
                                     </div>
                                 </section>
-                                <a href="#internship" class="btn-u btn-banner btn-android"><i class="fa fa-briefcase fa-2x"></i>Internship<br>
-                                <span>partners</span></a>
+                                <a href="#internship" class="btn-u btn-banner btn-android"><i class="fa fa-briefcase fa-2x"></i>REGISTER<br>
+                                <span>NOW</span></a>
                             </div>
                         </div>
                         <!--
@@ -450,6 +449,10 @@
            
             function getTimeRemaining(endtime) {
                 var t = Date.parse(endtime) - Date.parse(new Date());
+                // var seconds = Math.floor((t % (24 * 3600 * 3600 * 60)) / 60);
+                // var minutes = Math.floor((t % (24 * 3600 * 3600)) / 60 );
+                // var hours = Math.floor((t % (24 * 3600)) / 3600);
+                // var days = Math.floor(t / (24 * 3600));
                 var seconds = Math.floor((t / 1000) % 60);
                 var minutes = Math.floor((t / 1000 / 60) % 60);
                 var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
@@ -464,7 +467,7 @@
             }
             function initializeClock(id, endtime) {
                 var clock = document.getElementById(id);
-                var daysSpan = clock.querySelector('days');
+                var daysSpan = clock.querySelector('.days');
                 var hoursSpan = clock.querySelector('.hours');
                 var minutesSpan = clock.querySelector('.minutes');
                 var secondsSpan = clock.querySelector('.seconds');
@@ -485,10 +488,12 @@
                 var timeinterval = setInterval(updateClock, 1000);
             }
 
-            $('#inaugrate_btn').on('click',function(){
-                $(this).addClass('hidden');
-                $('#countdown').removeClass('hidden');
-                var deadline = new Date(Date.parse(new Date('06/04/2022 10:1 AM')));            
+            $(window).load(function(){
+                var deadline = new Date();        
+                deadline.setFullYear(2022, 05, 04);    
+                deadline.setHours(08);
+                deadline.setMinutes(00);
+                deadline.setSeconds(00);
                 initializeClock('counter', deadline);
             });
         </script>

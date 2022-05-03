@@ -39,7 +39,7 @@ hr.style13 {
     text-align: center;
     border-radius: 3px;
     margin: 5px 10px;
-    background:#69bf72;
+    background:#59c163;
     display: block;
     overflow:initial
 }
@@ -47,7 +47,7 @@ hr.style13 {
 #counter div > span{
     text-align: center;
     padding: 5px;
-    background: #69bf72;
+    background: #59c163;
     display: inline-block;
     font-size: 8vw;
     font-weight: bold;

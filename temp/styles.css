@@ -55,7 +55,7 @@
 
 .footer-basic {
     padding:10px 0px 0px;
-    background-color:#202020;
+    background-color:#313638;
     color:#ffffff;
 }
   
@@ -260,4 +260,7 @@
         margin-top: 5px;
         display: grid;
     }   
+}
+.navbar-collapse.in {
+    display: block !important;
 }

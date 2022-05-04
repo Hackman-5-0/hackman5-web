@@ -124,3 +124,21 @@
   margin: 1.3em 0;
   padding-left: 20px;
 }
+
+@media screen and (max-width: 555px) {
+  .accordion-title {
+    font-size: 3.5vw;
+  }
+  .accordian-details {
+    font-size: 3.5vw !important;
+  }
+  .accordian-details-2 {
+    font-size: 2.8vw !important;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .accordion-title {
+    font-size: 3.4vw;
+  }
+}

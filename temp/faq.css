@@ -125,6 +125,13 @@
   padding-left: 20px;
 }
 
+.FAQ-head {
+  font-size: 36px;
+  letter-spacing: 6px;
+  padding-bottom: 25px;
+}
+
+
 @media screen and (max-width: 555px) {
   .accordion-title {
     font-size: 3.5vw;
@@ -140,5 +147,12 @@
 @media screen and (max-width: 350px) {
   .accordion-title {
     font-size: 3.4vw;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  .FAQ-head {
+    font-size: 20px;
   }
 }

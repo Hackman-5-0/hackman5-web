@@ -44,6 +44,7 @@ body [id="about-us"]{
 .about-heading {
     color: #ccc !important;
     letter-spacing: 6px;
+    text-transform: none !important;
 }
 .image {
     background-color: #313638;

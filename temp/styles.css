@@ -23,6 +23,12 @@
     background: #69bf72 !important;
 }
 
+.contact-us-heading {
+    font-size: 36px;
+    letter-spacing: 6px;
+    padding-bottom: 20px;
+}
+
 .contact {
     font-family: 'Times New Roman', Times, serif;
     margin-left: 10px;
@@ -263,4 +269,10 @@
 }
 .navbar-collapse.in {
     display: block !important;
+}
+
+@media only screen and (max-width: 900px) {
+    .contact-us-heading {
+        font-size: 20px;
+    }
 }

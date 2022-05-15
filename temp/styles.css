@@ -1,26 +1,84 @@
 @font-face {
-    font-family: Font1;
     src: url('fonts/Futura\ Bold\ Italic\ font.ttf');
 }
 @font-face {
-    font-family: Font2;
     src: url('fonts/Futura\ Book\ font.ttf');
 }
 @font-face {
-    font-family: Font3;
     src: url('fonts/Futura\ Light\ Italic\ font.ttf');
 }
 @font-face {
-    font-family: Font4;
     src: url('fonts/futura\ medium\ bt.ttf');
 }
 @font-face {
-    font-family: 'Font5';
     src: url('fonts/Valorant\ Font.ttf');
 }
 
+::-webkit-scrollbar {
+    background-color: #3f4547;
+    width: 15px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #69bf72; 
+    border-radius: 10px;
+  }
+
 .countdown-btn {
     background: #69bf72 !important;
+}
+
+.trailer{
+    height: 100vh;
+
+}
+
+/* video{ */
+    /* Make video to at least 100% wide and tall */
+    /* min-width: 100%;  */
+    /* min-height: 100%;  */
+
+    /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+    /* width: auto; */
+    /* height: auto; */
+/* } */ 
+
+.photogrid-row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+  
+.photogrid-column {
+    -ms-flex: 25%;
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+  
+.photogrid-column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+  
+@media screen and (max-width: 800px) {
+.photogrid-column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+}
+}
+  
+@media screen and (max-width: 600px) {
+.photogrid-column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+}
 }
 
 .contact-us-heading {
@@ -30,13 +88,11 @@
 }
 
 .contact {
-    font-family: 'Times New Roman', Times, serif;
     margin-left: 10px;
     color: #ffffff;
 }
 .contact h1{
     text-align: center;
-    font-family: Font2;
     margin-bottom: 15px;
     margin-top: 15px;
     color: #ccc;
@@ -44,7 +100,6 @@
 
 .contact-details {
     margin-left: 30px;
-    font-family: Font3;
     text-align: center;
     margin-bottom: 20px;
     display: flex;
@@ -72,7 +127,6 @@
     font-size:20px;
     line-height:1.6;
     margin-bottom:0;
-    font-family: 'Font5';
 }
   
 .footer-basic li {

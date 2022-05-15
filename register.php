@@ -134,8 +134,7 @@ function makePayment(){
 
   if(team_size > 0 && team_size<4){
     var options = {
-    // "key": "rzp_test_nLYkSOe9jqHeVG",//(Hod) 
-    "key": "rzp_live_SNuGTvcFhUHMYy",//(Rahul) 
+    
 
     
     // Enter the Key ID generated from the Dashboard

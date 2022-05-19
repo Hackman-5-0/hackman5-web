@@ -1,287 +1,611 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<style>
-  ::-webkit-scrollbar {
-    background-color: #3f4547;
-    width: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #69bf72; 
-    border-radius: 10px;
-  }
-</style>
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackman 5.0</title>
-    <link rel="shortcut icon" href="assets/img/title_logo.png">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>  
-
-</head>
-<body>
-
-<!-- form for google docs -->
-<!-- <form 
-  method="POST" 
-  action="https://script.google.com/macros/s/AKfycbx8Xl2qsl4hUuIfE63L3wOfdZEeIHcL86wg7nLoTM3TPNeCDmlg5Mhg9GOVAgpLaIWJ/exec"
->
-  <input name="Email" type="email" placeholder="Email" required>
-
-  <input name="PHONE" type="email" placeholder="Email" required>
-  <input name="Name" type="text" placeholder="Name" required>
-  <button type="submit">Send</button>
-</form> -->
-
-
-<section style="background-color: #eee; padding: 5%;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registration</p>
-
-                <form class="mx-1 mx-md-4">
-
-
-                <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="team_name" class="form-control" />
-                      <label class="form-label" for="form3Example1c">Team Name</label>
+<!--[if IE 9]>
+<html lang="en" class="ie9">
+    <![endif]-->
+    <!--[if !IE]><!-->
+    <html lang="en">
+        <head>
+            <title>Hackman 5.0</title>
+            <!-- Meta -->
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="Hackman is an annual 24-hour hackathon.After a successful iteration of Hackman, Hackman 5.0 is back! Our theme is Open Hack. The future is data-driven. So get your fingers set on the keyboards & hack it out on the 4th & 5th of November, 2017.">
+            <meta name="author" content="">
+            <!-- Favicon -->
+            <link rel="shortcut icon" href="assets/img/title_logo.png">
+            <!-- Web Fonts -->
+            <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=cyrillic,latin">
+            <!-- CSS Global Compulsory -->
+            <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/css/app.css">
+            <link rel="stylesheet" href="assets/css/blocks.css">
+            <link rel="stylesheet" href="assets/css/plugins.css">
+            <link rel="stylesheet" href="assets/css/one.style.css">
+            <!-- CSS Footer -->
+            <link rel="stylesheet" href="assets/css/footers/footer-v7.css">
+            <!-- CSS Implementing Plugins -->
+            <link rel="stylesheet" href="assets/plugins/animate.css">
+            <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+            <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+            <link rel="stylesheet" href="assets/plugins/pace/pace-flash.css">
+            <link rel="stylesheet" href="assets/plugins/owl-carousel2/assets/owl.carousel.css">
+            <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+            <link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+            <link rel="stylesheet" href="assets/plugins/shhos/shhos.css">
+            <!--<link rel="stylesheet" href="assets/css/particle.css">-->
+            <!-- CSS Theme -->
+            <link rel="stylesheet" href="assets/css/app.style.css">
+            <!-- CSS Customization -->
+            <link rel="stylesheet" href="assets/css/custom.css">
+            <link rel="stylesheet" href="temp/about.css">
+            <link rel="stylesheet" href="temp/faq.css">
+            <link rel="stylesheet" href="temp/sponsors.css">
+            <link rel="stylesheet" href="temp/team.css">
+            <link rel="stylesheet" href="temp/bootstrap.min.css">
+            <link rel="stylesheet" href="temp/styles.css">
+        </head>
+        <body id="body" data-spy="scroll" data-target=".one-page-header" class="demo-lightbox-gallery" style="width: 100vw; overflow-x: hidden;">
+            <!-- Header -->
+            <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top hackman-navbar" style="width: 100vw; border-radius: 0px;">
+                <div class="container">
+                    
+                    <a class="navbar-brand" href="#" style="display: flex; align-items: center; justify-content: center;"><img src="assets/img/bg/hackman9.png" height="30" style="width: 100%;"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar"> 
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="Navbar" style="margin-left: 67px;">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link navItems" href="#body">Home</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#benefits">About</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#sponsor">Sponsors</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#prize">Prizes</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#meetourteam">Team</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#faqs">FAQ's</a></li>
+                        <li class="nav-item"><a class="nav-link navItems" href="#contact">Contact</a></li>
+                    </ul>
+                    
+                </div>
+                </div>
+        
+            </nav>
+            <!-- End Header -->
+            <!-- Promo Block -->
+            <section class="promo-section hackman-jumbotron" id="intro">
+                <div class="interactive-slider-v2 ">
+                    <div class="container">
+                        <div class="row" >
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-1 promo-info" >
+                                <div style="display: flex; align-items: center; justify-content: center;">
+                                <img class="img-responsive animated slideInUp wow" src="assets/img/bg/hackman6.png" alt="" style="text-align: center;">
+                                </div>
+                                <p style="font-size: 3rem;font-weight: 999;">JUNE 4th - 5th</p><br/>
+                                <p><b>
+                                    <code>
+                                        #eat() 
+                                    </code>
+                                    <code style="margin-left: 2%;">
+                                        #code()
+                                    </code>
+                                    <code style="margin-left: 2%;">
+                                        #coffee()
+                                    </code>
+                                    <code style="margin-left: 2%;">    
+                                        #repeat()
+                                    </code>
+                                </b></p>
+                                <section id="countdown" >
+                                    <!-- <h1 class="page-header text-center">Time remaining</h1> -->
+                                    <div class="container">
+                                        <div class="row" id="counter">
+                                            <div class="col-md-2 col-sm-3 col-xs-4 " style="border-radius: 15px; color:white">
+                                                <span class="days" ></span>
+                                                <div class="smalltext">Days</div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-4 "style="border-radius: 15px; background-color: #313638; color:white">
+                                                <span class="hours" style="background-color: #313638"></span>
+                                                <div class="smalltext">Hours</div>
+                                                
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-4"style="border-radius: 15px; background-color: #f2cf1d; color:white ">
+                                                <span class="minutes" style="background-color: #f2cf1d"></span>
+                                                <div class="smalltext">Minutes</div>
+                                            </div>
+                                            <div class="col-md-2 col-sm-3 col-xs-4"style="border-radius: 15px; color:white">
+                                                <span class="seconds"></span>
+                                                <div class="smalltext">Seconds</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLScV5iKfNsxrcU8pJrCxBsXSeacg10pF0QFKz-qHrh7WygruAw/viewform" target="_blank" class="btn-u btn-banner btn-android"><i class="fa fa-coffee fa-2x"></i>REGISTER<br>
+                                <span>NOW</span></a>
+                            </div>
+                        </div>
+                        <!--
+                            <div class="col-md-6 col-sm-12 col-xs-12 banner-img overflow-h">
+                            	<img class="img-responsive animated slideInUp wow" src="assets/img/Hackman_2_logo.png" alt="">
+                            </div>
+                            -->
                     </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="name" class="form-control" />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
+                </div>
+            </section>
+            
+            <!-- End Promo Block -->
+            <!-- Benefits -->
+            <!-- How It Works -->
+            <section id="benefits">
+                <div id="about-us">
+                    <div class="container">
+                        <div class="g-pt-40 g-pb-40">
+                            <div class="g-heading-v10 g-mb-65 text-center">
+                                <h2 class="about-heading"><em class="block-name">ABOUT US</em>HACKMAN<strong> v5.0</strong></h2>
+                                <p>Hackman is an annual 24-hour hackathon. After a successful iteration of 4 versions, <br /> Hackman v5.0 is back! Our theme is Open Hack. The future is data-driven.</p>
+                            </div>
+                            <div class="row equal-height-columns">
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-calendar fa-3x font-awesome-green"></i>
+                                        <h3>Mark the dates<br>
+                                            4th & 5th June, 2022
+                                        </h3>
+                                        <p>Hackman v5.0 will be conducted on 4th June, 2022 till 5th June, 2022</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s" data-wow-delay=".3s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-cutlery fa-3x font-awesome-grey"></i>
+                                        <h3>We have lots in store</h3>
+                                        <p>Hackman v5.0 will take care of your Hunger and Entertainment for 24 hours</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s" data-wow-delay=".5s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-users fa-3x font-awesome-yellow"></i>
+                                        <h3>Build your team<br>or join a team</h3>
+                                        <p>Build a team of Maximum 3 people and compete with other teams.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row equal-height-columns">
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s" data-wow-delay=".6s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-lightbulb-o fa-3x font-awesome-yellow"></i>
+                                        <h3>Do you have<br>an innovative idea?</h3>
+                                        <p>Come with an idea and blow us out.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s" data-wow-delay=".8s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-gift fa-3x font-awesome-grey"></i>
+                                        <h3>Great ideas can land<br>you up to Internships and Prizes</h3>
+                                        <p>Show our judges what makes you different and land yourself an internship.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 benefit-box animated fadeIn wow" data-wow-duration="1.5s" data-wow-delay="1s">
+                                    <div class="benefit equal-height-column about-individual-box">
+                                        <i class="fa fa-coffee fa-3x font-awesome-green"></i>
+                                        <h3>Refresh anytime with<br>a cup of coffee</h3>
+                                        <p>A cup of coffee is all a coder looks for . Enjoy your time at Hackman v5.0 with unlimited coffee.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="clg-name" class="form-control" />
-                      <label class="form-label" for="form3Example3c">College Name</label>
+                    <div class="photogrid-row"> 
+                        <div class="photogrid-column">
+                          <img src="./assets/img/DSC02791.JPG" style="width:100%">
+                          <img src="./assets/img/DSC03024.JPG" style="width:100%">
+                          <img src="./assets/img/DSC02842.jpg" style="width:100%">
+                        </div>
+                        <div class="photogrid-column">
+                          <img src="./assets/img/DSC02915.JPG" style="width:100%">
+                          <img src="./assets/img/DSC02963.JPG" style="width:100%">
+                          <img src="./assets/img/DSC03085.JPG" style="width:100%">
+                        </div>  
+                        <div class="photogrid-column">
+                          <img src="./assets/img/DSC02859.jpg" style="width:100%">
+                          <img src="./assets/img/DSC03017.JPG" style="width:100%">
+                          <img src="./assets/img/DSC03081.JPG" style="width:100%">
+                        </div>
+                        <div class="photogrid-column">
+                          <img src="./assets/img/DSC03095.JPG" style="width:100%">
+                          <img src="./assets/img/DSC03113.JPG" style="width:100%">
+                          <img src="./assets/img/DSC02847.jpg" style="width:100%">
+                        </div>
                     </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="email" class="form-control" />
-                      <label class="form-label" for="form3Example3c">Email</label>
+                    <div style="padding: 5%">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <video autoplay controls loop muted width="100%" height="100%" style="border-radius: 22px;">
+                                    <source type="video/mp4" src="./assets/Hackman5.0.mp4">
+                                    <!-- <source type="video/webm" src="http://blucube.net/stuff/codepen-assets/html5vid/beepl-pink-vynil.webm">
+                                        <source type="video/ogg" src="http://blucube.net/stuff/codepen-assets/html5vid/beepl-pink-vynil.ogv"> -->
+                                    </video>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <h1 class="about-heading">
+                                        <b>
+                                        Hackman is back with a Bang!
+                                        </b>
+                                    </h1>
+                                    <p style="font-size: 1.4rem">
+                                        HackMan v.5 is an Inter College, extravagant 24-hours Hackathon,
+                                        hosted by the ISE Department of Dayananda Sagar College of
+                                        Engineering (DSCE), Bangalore.
+                                        We give the brightest of minds a chance to brainstorm as a team and come up with unique solutions, code it out and solve some of the pressing problems of our society.
+                                        Over the first 4 versions we have seen some brilliant projects and we challenge you to top them off with your Out-of-the-box ideas.
+                                        
+                                        “You can't solve a problem on the same level that it was created. You have
+                                        to rise above it to the next level.”                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="phone" class="form-control" />
-                      <label class="form-label" for="form3Example4c">Phone</label>
+                </div>
+            </section>
+            <!-- End Benefits -->
+            <!-- End How It Works -->
+            <!--Sponsors-->
+            <div class="content" style="background: #f8f8f8; height: fit-content;">
+                <div class="container">
+                    <div class="row">
+                        <div class="g-heading-v10 g-mb-65 text-center" >
+                            <h2><em class="block-name"> Benefits</em>OUR <strong> PARTNERS</strong></h2>
+                        </div>    
+                    </div>  
+                    <div class="section1" id="prize">
+                        <div class="pageitem"><h2>Prizes</h2></div>
+                        <div class="row">
+                            <div class="col-12 col-sm-4" style="text-align: center">
+                                <img src="./assets/img/medal (2).png" width="25%"/>
+                                <h3 style="margin-top: 2%">
+                                    <strong style="color:black">Rs. 18,000 + <br/>Internship Opportunities</strong>
+                                </h3>
+                            </div>
+                            <div class="col-12 col-sm-4" style="text-align: center">
+                                <img src="./assets/img/medal (1).png" width="25%"/>
+                                <h3 style="margin-top: 2%">
+                                    <strong style="color:black">Rs. 8,000</strong>
+                                </h3>
+                            </div>
+                            <div class="col-12 col-sm-4" style="text-align: center">
+                                <img src="./assets/img/medal.png" width="25%"/>
+                                <h3 style="margin-top: 2%">
+                                    <strong style="color:black">Rs. 4,000</strong>
+                                </h3>
+                            </div>
+                        </div>
+                        
                     </div>
-                  </div>
-
-                  <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                      <input type="number" min="1" max="3" id="team_size" class="form-control" />
-                      <label class="form-label" for="form3Example4cd">Team Size</label>
-                    </div>
-                  </div>
-                  <p style="color: #69bf72; text-align: center; font-size: 0.8rem">
-                    <a href='./Privacy Policy.pdf' style="color:#69bf72" target="_blank">Privacy Policy</a> | <a href='./Terms and Conditions.pdf' style="color:#69bf72" target="_blank">Terms and Condition</a>
-                  </p>
-                  <!-- <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div> -->
-
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <input type="button" onclick="makePayment()" class="btn btn-primary btn-lg" value="Register">
-                  </div>
-
-                </form>
-
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                <img src="assets/img/bg/hackman6.png"
-                  class="img-fluid" alt="Sample image">
-
-
-              </div>
+                    <div class="section" id="sponsor">
+                        <div class="pageitem"><h2>Our Sponsors</h2></div>
+                        <div class="row">
+                            <div class="col-12 col-sm-4" style="text-align:center; display: flex; align-items: center; justify-content: center;"><a href="https://sparkar.facebook.com/ar-studio/" target="_blank"><img src="./assets/img/deeplearning.png" width="50%"/></a></div>
+                            <div class="col-12 col-sm-4" style="text-align:center; display: flex; align-items: center; justify-content: center;"><a href="https://quantumgully.com/" target="_blank"><img src="./assets/img/skolar.jpg" width="100%"/></a></div>
+                            <div class="col-12 col-sm-4" style="text-align:center; display: flex; align-items: center; justify-content: center;"><a href="https://skillvertex.in/" target="_blank"><img src="./assets/img/skill_vertex_prev_ui.png" width="50%"/></a></div>
+                        </div>
+                    </div>     
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <!--End Sponsors-->
+            <!-- Video and Gallery -->
+            <section id="meetourteam">
+                <link rel="stylesheet" href="temp/team.css">
+                <div id="meet-the-team">
+                    <div class="container  g-pt-40 g-pb-40">
+                        
+                        <h2 class="heading meet-the-team-heading">
+                            <span style="text-transform: uppercase; letter-spacing: 6px;">
+                            Meet The <strong>Team</strong></span>
+                        </h2>
+                        
+                    
+                        <div class="profiles" >
+                                <div class="profile">
+                                    <img src="assets/img/team/1.jpg" class="profile-img">
+                                    <h3 class="user-name">Rajath J</h3>
+                                </div>
+                                <div class="profile" style = 'float:left'>
+                                    <img src="assets/img/team/2.jpg" class="profile-img">
+                                    <h3 class="user-name">Sindhu </h3>
+                                    
+                                </div>
+                            
+                                <div class="profile">
+                                    <img src="assets/img/team/3.jpg" class="profile-img">
+                                    <h3 class="user-name">Rithik Dutt</h3>
+                                   
+                                </div>
+                            
+                                <div class="profile">
+                                    <img src="assets/img/team/4.jpg" class="profile-img">
+                                    <h3 class="user-name">Akash Sangami</h3>
+                                 
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/5.jpg" class="profile-img">
+                                    <h3 class="user-name">Garima</h3>
+                                   
+                                </div>
+                            
+                                <div class="profile">
+                                    <img src="assets/img/team/7.jpg" class="profile-img">
+                                    <h3 class="user-name">Sandesh Hegde</h3>
+                                 
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/6.jpg" class="profile-img">
+                                    <h3 class="user-name">Shreyas</h3>
+                               
+                                </div>
+                            
+                            
+                                <div class="profile">
+                                    <img src="assets/img/team/8.jpg" class="profile-img">
+                                    <h3 class="user-name">Rahul B V</h3>
+                              
+                                </div>
+                            
+                                <div class="profile">
+                                    <img src="assets/img/team/9.jpg" class="profile-img">
+                                    <h3 class="user-name">Iraa Srivastava</h3>
+                                   
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/10.jpg" class="profile-img">
+                                    <h3 class="user-name">Ajay Galagali</h3>
+                                   
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/11.jpg" class="profile-img">
+                                    <h3 class="user-name">Ashutosh</h3>
+                                   
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/13.jpg" class="profile-img">
+                                    <h3 class="user-name">Chirag R S</h3>
+                                   
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/15.jpeg" class="profile-img">
+                                    <h3 class="user-name">Neeraj</h3>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/16.jpg" class="profile-img">
+                                    <h3 class="user-name">Sarvesh S</h3>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/17.jpeg" class="profile-img">
+                                    <h3 class="user-name">Bhuvanesh Perumal</h3>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/chiranth.jpeg" class="profile-img">
+                                    <h3 class="user-name">Chiranth</h3>
+                                </div>
+                                <div class="profile">
+                                    <img src="assets/img/team/14.jpg" class="profile-img">
+                                    <h3 class="user-name">Kedar Hegde</h3>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Features -->
+            
+                <!-- Footer -->
+                <!--FAQs -->
+                <section id="faqs" class="g-pt-40 g-pb-40">
+                    <link rel="stylesheet" href="temp/faq.css" />
+                    <div id="faqs">
+                    <div class="container">
+                        <h2 style="text-transform: uppercase; text-align: center;" class="FAQ-head">
+                            Frequently Asked 
+                            <strong>
+                                Questions
+                            </strong>
+                        </h2>
+                        <div class="accordion">
+                          <div class="accordion-item">
+                            <button id="accordion-button-1" aria-expanded="false">
+                              <span class="accordion-title">Who can attend Hackman v5.0</span>
+                              <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content">
+                              <p class="accordian-details">
+                                The only restriction is that you must be a student! You should have a valid current University / College ID. Build your team and register.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <button id="accordion-button-2" aria-expanded="false">
+                              <span class="accordion-title"> How much is the Registration fee?</span>
+                              <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content">
+                              <p class="accordian-details">
+                                The registration fees for Hackman v5.0 is  ₹300 per person in the team.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <button id="accordion-button-3" aria-expanded="false">
+                              <span class="accordion-title"> How many people can I have in my team?</span>
+                              <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content">
+                              <p class="accordian-details">
+                               You can have a maximum of 3 members and a minimum of 1 in a team!
+                              </p>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <button id="accordion-button-4" aria-expanded="false">
+                              <span class="accordion-title"> How long is the event?</span>
+                              <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content">
+                              <p class="accordian-details-2">
+                               Everybody gets an approx. of 22 hours to work on their hacks. Including inauguration and prize distributions etc, the entire event lasts for about 24 hours. You are free to leave the venue before 7 PM on day one and come back the next morning after 6 AM.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <button id="accordion-button-5" aria-expanded="false">
+                              <span class="accordion-title">Where will the Hackathon be held?</span>
+                              <span class="icon" aria-hidden="true"></span>
+                            </button>
+                            <div class="accordion-content">
+                              <p class="accordian-details">
+                                Department of Information Science and Engineering (Building no. 19), Dayananda Sagar College of Engineering, Kumaraswamy Layout, Bengaluru - 560078
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <script src="temp/faq.js"></script>
+                    </div>
+            </section>
+            <!--End FAQs -->
+            <!-- End Features -->
+            <section id="contact">
+                <!--Google Maps Embed-->
+                <div class="container-fluid no-side-padding " style="width: 100vw; overflow-x: hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0029172171785!2d77.563501715187!3d12.90753369089803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15630fedeecf%3A0xe99711388d9ecc92!2sDayananda+Sagar+Institutions!5e0!3m2!1sen!2sin!4v1508363789425" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <!--Footer-->
+                <div class="footer-basic">
+                    <footer>
+                        <div class="contact">
+                            <h1 style="text-transform: uppercase;" class="contact-us-heading">Contact <strong>Us</strong></h1>
+                            <div class="contact-details row">
+                                <span class="col-12 col-lg-4" style="margin-bottom: 20px; font-size: large;">
+                                    Shreyas Bhakta<br/>
+                                <i class=" fa fa-phone footer-icons" style="font-size:26px"></i><a href="tel:8105281599">+91 81052 81599</a>
+                                </span>
+                                <span class="col-12 col-lg-4" style="margin-bottom: 20px;">
+                                <i class=" fa fa-envelope footer-icons" style="font-size:24px"></i> <a href="mailto:contact@hackman.in">contact@hackman.in</a>
+                                </span>
+                                <span class="col-12 col-lg-4" style="margin-bottom: 20px; font-size: large;">
+                                    Iraa Srivastava<br/>
+                                <i class=" fa fa-phone footer-icons" style="font-size:26px"></i> <a href="tel:9651432871">+91 96514 32871</a>
+                                </span>
+                        </div>
+                        </div>
+                        <div class="social">
+                            <span class="insta">
+                            <a href="https://www.instagram.com/wearehackman/" target="_blank" class="insta"><i id="icon" class="fa fa-instagram" style="font-size:36px"></i></a>
+                            </span>
+                            <span class="fbook">
+                                <a href="https://www.facebook.com/WeAreHackman" target="_blank"><i class="fa fa-facebook-official" style="font-size:36px"></i></a>    
+                            </span>
+                            <span class="lnkin">
+                                <a href="https://www.linkedin.com/company/wearehackman/" target="_blank"><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                            </span>
+                        </div>
+                        <ul class="list-inline">
+                            <li><a href="#body">Home</a></li>
+                            <li class="list-inline-item"><a href="#benefits">About</a></li>
+                            <li class="list-inline-item"><a href="#sponsor">Sponsors</a></li>
+                            <li class="list-inline-item"><a href="#prize">Prizes</a></li>
+                            <li class="list-inline-item"><a href="#meetourteam">Team</a></li>
+                            <li class="list-inline-item"><a href="#faqs">FAQ's</a></li>
+                            <li class="list-inline-item"><a href="#contact">Contact</a></li>
+                        </ul>
+                        <p class="copyright"><a href='./Privacy Policy.pdf' style="color:#69bf72" target="_blank">Privacy Policy</a> | <a href='./Terms and Conditions.pdf' style="color:#69bf72" target="_blank">Terms and Condition</a>, Hackman v5.0 © 2022</p>
+                    </footer>
+                </div>
+           
+            </section>
+            <!-- End Footer -->
+            <!-- JS Global Compulsory -->
+            <script src="assets/plugins/jquery/jquery.min.js"></script>
+            <script src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+            <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+            <!-- JS Implementing Plugins -->
+            <!--<script src="assets/plugins/smoothScroll.js"></script>-->
+            <!--<script src="assets/plugins/jquery.easing.min.js"></script>-->
+            <script src="assets/plugins/pace/pace.min.js"></script>
+            <script src="assets/plugins/owl-carousel2/owl.carousel.min.js"></script>
+            <!--<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>-->
+            <!--<script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>-->
+            <!--<script src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio-2.0.1.min.js"></script>-->
+            <!--<script src="assets/plugins/modernizr.js"></script>-->
+            <!--<script src="assets/plugins/shhos/shhos.js"></script>-->
+            <!--<script src="assets/plugins/wow/wow-ini-themes.js"></script>-->
+            <!-- JS Page Level-->
+            <script src="assets/js/one.app.js"></script>
+            <script src="assets/js/plugins/pace-loader.js"></script>
+            <script src="assets/js/plugins/owl-carousel2.js"></script>
+            <script src="assets/js/plugins/cube-portfolio.js"></script>
+            <script src="assets/js/forms/contact.js"></script>
 
+            
+            <script>
+                $(function() {
+                	App.init();
+                	OwlCarousel.initOwlCarousel();
+                	ContactForm.initContactForm();
+                });
+            </script>
+            <!--[if lt IE 10]>
+            <script src="assets/plugins/sky-forms-pro/skyforms/js/jquery.placeholder.min.js"></script>
+            <!--Start of Tawk.to Script-->
+            <!--End of Tawk.to Script-->
+            <![endif]-->
+        </body>
 
-<script>
+        <script>
+           
+            function getTimeRemaining(endtime) {
+                var t = Date.parse(endtime) - Date.parse(new Date());
+                // var seconds = Math.floor((t % (24 * 3600 * 3600 * 60)) / 60);
+                // var minutes = Math.floor((t % (24 * 3600 * 3600)) / 60 );
+                // var hours = Math.floor((t % (24 * 3600)) / 3600);
+                // var days = Math.floor(t / (24 * 3600));
+                var seconds = Math.floor((t / 1000) % 60);
+                var minutes = Math.floor((t / 1000 / 60) % 60);
+                var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+                var days = Math.floor(t / (1000 * 60 * 60 * 24));
+                    return {
+                        'total': t,
+                        'days': days,
+                        'hours': hours,
+                        'minutes': minutes,
+                        'seconds': seconds
+                    };
+            }
+            function initializeClock(id, endtime) {
+                var clock = document.getElementById(id);
+                var daysSpan = clock.querySelector('.days');
+                var hoursSpan = clock.querySelector('.hours');
+                var minutesSpan = clock.querySelector('.minutes');
+                var secondsSpan = clock.querySelector('.seconds');
 
-function makePayment(){
+                function updateClock() {
+                    var t = getTimeRemaining(endtime);
+                    daysSpan.innerHTML = t.days;
+                    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
-  // var name = $("#name").val();
-  const team_name=document.getElementById('team_name').value;
-  const name=document.getElementById('name').value;
-  const email=document.getElementById('email').value;
-  const phone=document.getElementById('phone').value;
-  const team_size=document.getElementById('team_size').value;
-  const clg_name=document.getElementById('clg-name').value;
-  const total_amount = team_size*300*100;
-  const gsheetskey = "AIzaSyAUXO4n4cszqf-jPsEjOJaCK5QOKRdnKWg";
+                    if (t.total === 0) {
+                    clearInterval(timeinterval);
+                    }
+                }
 
-  let paymentid;
+                updateClock();                
+                var timeinterval = setInterval(updateClock, 1000);
+            }
 
-  // console.log(team_name);
-  // console.log(phone);
-  // console.log(document.getElementById('email').value);
-
-  if(team_size > 0 && team_size<4){
-    var options = {
-    
-
-    "key": "rzp_test_nLYkSOe9jqHeVG",//(Hod) 
-    // "key": "rzp_live_SNuGTvcFhUHMYy",//(Rahul)
-    // Enter the Key ID generated from the Dashboard
-    
-    // rzp_live_SNuGTvcFhUHMYy(Rahul key id)
-    "amount": total_amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-    "currency": "INR",
-    "name": "Hackman 5.0",
-    "description": "",
-    "image": "https://drive.google.com/uc?export=download&id=1pHdCX3PjzCWQ7aU3ppjDbuCMDD0NnjWe",
-    //"order_id": "order_IluGWxBm9U8zJ8", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-    "handler": function (response){
-      paymentid = response.razorpay_payment_id; 
-      console.log(team_name);
-      console.log(name);
-      console.log(email);
-      console.log(phone);
-      console.log(team_size);
-      console.log(paymentid);
-      Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "wearehackman@gmail.com",
-        Password: "835787E9251682A4D3475142DAD15A41E667",
-        Port: 2525,
-        To: email,
-        From: "wearehackman@gmail.com",
-        Subject: "Registration Successfull",
-        Body: `Hey ${name}, \n 
-        Congratulations on successfull registration for Hackman v5.0
-        Our team will reach out to you through WhatsApp
-        Please verify your details:
-        Name: ${name}
-        Team-Name: ${team_name}
-        College-name: ${clg_name}
-        Team-size: ${team_size}
-        Email: ${email}
-        Ph. Number: ${phone}`,
-
-      })
-      .then(function (message) {
-        alert("mail sent successfully")
-      });
-      Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "wearehackman@gmail.com",
-        Password: "835787E9251682A4D3475142DAD15A41E667",
-        Port: 2525,
-        To: "wearehackman@gmail.com",
-        From: "wearehackman@gmail.com",
-        Subject: "Registration Successfull",
-        Body: `Hey ${name},
-        Congratulations on successfull registration for Hackman v5.0
-        Our team will reach out to you through WhatsApp
-        Please verify your details:
-        Name: ${name}
-        Team-Name: ${team_name}
-        College-name: ${clg_name}
-        Team-size: ${team_size}
-        Email: ${email}
-        Ph. Number: ${phone}`,
-      })
-      .then(function (message) {
-        console.log("mail sent successfully")
-      });
-
-      alert("Registration successfull");
-
-// if(!isset($_POST['submit']))
-// {
-
-// // echo "error; you need to submit the form!";
-// }
-// $name = $_GET['name'];
-// $visitor_email = $_GET['email'];
-
-
-// //Validate first
-// if(empty($name)||empty($visitor_email)) 
-// {
-// echo "Name and email are mandatory!";
-// exit;
-// }
-// $email_from = 'tom@amazing-designs.com';//<== update the email address
-// $email_subject = "New Form submission";
-// $email_body = "You have received a new message from the user $name.\n".
-//  "Here is the message:\n".
-
-// $to = "khan.koder@gmail.com";//<== update the email address
-// $headers = "From: $email_from \r\n";
-// $headers .= "Reply-To: $visitor_email \r\n";
-
-// mail($to,$email_subject,$email_body,$headers);
-
-//done. redirect to thank-you page.
-
-        //add the google sheets api
-        window.location = "index.html";
-    },
-    "prefill": {
-        "name": name,
-        "email": email,
-        "contact": phone
-    },
-    "theme": {
-        "color": "#3399cc"
-    }
-  };
-  var rzp1 = new Razorpay(options);
-  rzp1.open();
-  rzp1.on('payment.failed', function (response){
-        // alert(response.error.code);
-        alert(response.error.description);
-        window.location = "register.html";
-});
-  }else{
-    alert("The Team size varies from 1 to 3. Please adjust your team accordingly")
-    window.location = "register.html";
-  }
-}
-</script>
-
-</body>
-
-
-
-</html>
+            $(window).load(function(){
+                var deadline = new Date();        
+                deadline.setFullYear(2022, 05, 04);    
+                deadline.setHours(08);
+                deadline.setMinutes(00);
+                deadline.setSeconds(00);
+                initializeClock('counter', deadline);
+            });
+        </script>
+    </html>

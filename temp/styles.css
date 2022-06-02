@@ -98,6 +98,10 @@
     color: #ccc;
 }
 
+.landing-img {
+    padding-top: 150px;
+}
+
 .contact-details {
     margin-left: 30px;
     text-align: center;
@@ -246,6 +250,9 @@
 @media screen and (max-width: 768px) {
     .hackman-jumbotron {
        margin-top: 100px;
+    }
+    .landing-img {
+        padding-top: 0px;
     }
     
 }

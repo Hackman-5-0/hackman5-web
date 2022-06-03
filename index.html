@@ -118,8 +118,10 @@
                                         </div>
                                     </div>
                                 </section>
-                                <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLScV5iKfNsxrcU8pJrCxBsXSeacg10pF0QFKz-qHrh7WygruAw/viewform" target="_blank" class="btn-u btn-banner btn-android"><i class="fa fa-coffee fa-2x"></i>REGISTER<br>
-                                <span>NOW</span></a> -->
+                                <a id="inaugrate_btn" class="btn-u btn-banner btn-android">
+                                    <i class="fa fa-code fa-2x"></i>
+                                    INITIATE
+                                </a>
                             </div>
                         </div>
                         <!--
@@ -631,13 +633,64 @@
                 var timeinterval = setInterval(updateClock, 1000);
             }
 
+            function secondsToHms(d) {
+                d = Number(d);
+                var h = Math.floor(d / 3600);
+                var m = Math.floor(d % 3600 / 60);
+                var s = Math.floor(d % 3600 % 60);
+                return [h, m, s]; 
+            }
+
+            function countdownFunction(beginCountdown) {
+                var total_seconds = 79200;
+                var clock = document.getElementById('counter');
+                var daysSpan = clock.querySelector('.days');
+                var hoursSpan = clock.querySelector('.hours');
+                var minutesSpan = clock.querySelector('.minutes');
+                var secondsSpan = clock.querySelector('.seconds');
+                daysSpan.innerHTML = "00";
+                if (beginCountdown) {
+                    // document.getElementById('#inaugrate_btn').innerHTML("LAUNCHED");
+                    setInterval(() => {
+                        // The amount of time passed increments by one
+                        total_seconds -= 1;
+                        // The time left label is updated
+                        var ans = secondsToHms(total_seconds);
+                        hoursSpan.innerHTML = ans[0].toString();
+                        minutesSpan.innerHTML = ans[1].toString();
+                        secondsSpan.innerHTML = ans[2].toString();
+                    }, 1000);
+                } else {
+                    hoursSpan.innerHTML = "22";
+                    minutesSpan.innerHTML = "00";
+                    secondsSpan.innerHTML = "00";
+                }
+            }
+
             $(window).load(function(){
-                var deadline = new Date();        
-                deadline.setFullYear(2022, 05, 05);    
-                deadline.setHours(08);
-                deadline.setMinutes(30);
-                deadline.setSeconds(00);
-                initializeClock('counter', deadline);
+                // var deadline = new Date();        
+                // deadline.setFullYear(2022, 05, 05);    
+                // deadline.setHours(08);
+                // deadline.setMinutes(30);
+                // deadline.setSeconds(00);
+                // initializeClock('counter', deadline);
+                countdownFunction(false);
+            });
+            $('#inaugrate_btn').on('click',function(){
+                $('#inaugrate_btn').css({
+                    'cursor': 'not-allowed',
+                    'pointer-events': 'none',
+
+                    /*Button disabled - CSS color class*/
+                    'color': '#c0c0c0',
+                    'background-color': '#313628'
+                });
+                countdownFunction(true);
+
+                // $(this).addClass('hidden');
+                // $('#countdown').removeClass('hidden');
+                // var deadline = new Date(Date.parse(new Date()) + 24* 60 * 60 * 1000);            
+                // initializeClock('counter', deadline);
             });
         </script>
     </html>
